@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Suteki | Atrae Miradas  </title>
+
+<!-- Google Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Vinculo a nuestro archivo CSS externo -->
+    <link rel="stylesheet" href="css/styles.css">
+
+
+</head>
+<body>
+  <header>
+<!-- 1. BARRA SUPERIOR (Promoción y Redes Sociales) -->
+   <section class="top-bar">
+
+   <!-- Texto de descuento -->  
+    <p class="mensaje-bienvenidad">
+      ¡ Bienvenidas Sutekis !
+    </p>
+    
+   <!-- Iconos de redes sociales -->
+    <nav class="iconos-sociales">
+      <ul>
+        <li><a href="https://www.tiktok.com/@suteki.peru.20" target="_blank"><img src="ICONOS/tiktok.png" alt="TikTok"></a></li>
+        <li><a href="https://www.facebook.com/Suteki.boutique/" target="blank"><img src="ICONOS/facebook.png" alt="Facebook"></a></li>
+        <li><a href="https://www.instagram.com/suteki.peru/" target="_blank"><img src="ICONOS/instagram.png" alt="Instagram"></a></li>
+      </ul>
+    </nav>
+
+   </section>
+
+<!-- 2. CABECERA CENTRAL (Logo y Utilidades) -->
+   <section class="cabecera">
+    <!-- Icono menú móvil -->
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <!-- Logo -->
+    <a href="inicio.html" class="logo">
+      <img src="IMG/Logo_suteki.png" alt="Logo Suteki">
+    </a>
+
+    <!-- Íconos cabecera derecha (Utilidades)-->
+    <nav class="iconos-utilidades">
+      <ul>
+        <li><img src="ICONOS/buscador.png" alt="Buscar"></li>
+        <li><img src="ICONOS/cuenta.png" alt="Cuenta"></li>
+        <li><img src="ICONOS/corazon.png" alt="Favoritos"></li>
+        <li><img src="ICONOS/bolsa_compra.png" alt="Carrito"></li>
+      </ul>
+    </nav>
+   </section>
+
+<!-- 3. MENÚ PRINCIPAL-->
+    <nav class="menu" id="menu-principal">
+      <ul id="menu-lista">
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="vestidos.html">PRENDAS</a></li>
+        <li><a href="tallas.html">GUÍA DE TALLAS</a></li>
+        <li><a href="nosotras.html"class="active">NOSOTRAS</a></li>
+      </ul>
+    </nav>
+</header>
+
+<!-- 4. SUB_CABECERA-->
+<section class="banner-sub">
+
+    <!-- Imagen de banner -->
+    <img src="IMG/fondo-nosotros.jpg" alt="Banner Sub" class="imagen-banner">
+      
+    <div class="texto-banner-sub">
+    <p class="hero-subtitle">Conoce a suteki</p>
+    <h2>Nosotras somos</h2>
+  </div>
+</section>
+
+<!-- 5. QUIENES SOMOS-->
+<section class="quienes-somos">
+
+  <section class="qs-contenido">
+
+    <!-- COLUMNA TEXTO -->
+    <section class="texto-columna">
+      <h2>¿QUIENES SOMOS?</h2>
+      <p>
+        Somos Suteki, una marca creada para acompañar a mujeres reales en cada 
+        etapa de su día. Nacimos con la idea de ofrecer más que prendas: 
+        buscamos brindar confianza, estilo y comodidad en cada elección. 
+        Creemos en una moda que se adapta a ti, que resalta tu esencia y te 
+        permite expresarte con libertad.
+      </p>
+      <p>
+        En Suteki combinamos tendencias actuales conun toque chic y femenino, 
+        cuidando la calidad, la variedad de tallas y una atención personalizada 
+        que nos identifica.
+      </p>
+      <p>
+        Porque para nosotras, vestir bien no es solo una elección, es una forma 
+        de sentirte tú misma.
+    </section>
+
+    <!-- COLUMNA IMAGEN -->
+    <section class="imagen-quienes">
+      <img src="IMG/QUIENES SOMOS.png" alt="Conócenos Suteki">
+    </section>
+
+  </section>
+
+</section>
+
+  <!-- MISIÓN / VISIÓN -->
+<section class="mision-vision">
+
+  <section class="bloque">
+    <img src="ICONOS/VISION.png" alt="Misión Suteki" class="icono-mv">
+    <h3>MISIÓN</h3>
+    <p>
+      Brindamos a nuestras clientas prendas elegantes y de confianza para ser ellas mismas,
+      adaptadas a distintos estilos y tallas, para mujeres que buscan verse bien.
+    </p>
+  </section>
+
+  <section class="bloque">
+    <img src="ICONOS/MISION.png" alt="Visión Suteki" class="icono-mv">
+    <h3>VISIÓN</h3>
+    <p>
+      Ser una marca reconocida por su estilo, calidad y cercanía con nuestras clientas,
+      posicionándonos como una opción confiable y moderna en moda femenina.
+    </p>
+  </section>
+
+</section>
+
+<!-- VALORES -->
+<section class="valores">
+  <h3>VALORES</h3>
+
+  <section class="lista-valores">
+
+    <div class="valor-item">
+      <span>CALIDAD</span>
+      <img src="IMG/icono-calidad.png" alt="Calidad" class="icono-valor">
+    </div>
+
+    <div class="valor-item">
+      <span>INNOVACIÓN</span>
+      <img src="IMG/icono-innovacion.png" alt="Innovación" class="icono-valor">
+    </div>
+
+    <div class="valor-item">
+      <span>CONFIANZA</span>
+      <img src="IMG/icono-confianza.png" alt="Confianza" class="icono-valor">
+    </div>
+
+    <div class="valor-item">
+      <span>AMABILIDAD</span>
+      <img src="IMG/icono-amabilidad.png" alt="Amabilidad" class="icono-valor">
+    </div>
+
+  </section>
+</section>
+
+<!-- 9. SECCIÓN BENEFICIOS -->
+   <section class="beneficios">
+      
+    <section>
+      <img src="ICONOS/delivery.png" alt="Delivery">
+      <h2>DELIVERY</h2>
+      <p>Envíos a cualquier parte del Perú 100% seguros</p>
+    </section>
+
+    <section>
+      <img src="ICONOS/calidad.png" alt="Calidad">
+      <h2>CALIDAD</h2>
+      <p>Ofrecemos la mejor calidad en todos nuestros productos</p>
+    </section>
+
+    <section>
+      <img src="ICONOS/pago seguro.png" alt="Pago Seguro">
+      <h2>PAGO SEGURO</h2>
+      <p>Paga con cualquier medio de pago con seguridad garantizada</p>
+    </section>
+
+    <section>
+      <img src="ICONOS/marca.corazón.png" alt="Marca">
+      <h2>MARCA PIURANA</h2>
+      <p>Diseños de catálogo exclusivos</p>
+    </section>
+  
+   </section>
+
+<!-- 10. FOOTER -->
+   <footer class="footer">
+
+    <section class="footer-column logo-redes-column"> 
+        <img src="IMG/Logo_suteki_peque.png" class="logo-footer"alt="Suteki Logo">
+
+      <ul class="redes-list">
+        <li><a href="https://www.tiktok.com/@suteki.peru.20"target="_blank"><img src="ICONOS/iconos_tik tok_rosa.png" alt="TikTok"></a></li>
+        <li><a href="https://www.facebook.com/Suteki.boutique/"target="_blank"><img src="ICONOS/iconos_facebook_rosa.png" alt="Facebook"></a></li>
+        <li><a href="https://www.instagram.com/suteki.peru/"target="_blank"><img src="ICONOS/iconos_instagram_rosa.png" alt="Instagram"></a></li>
+      </ul>
+    </section>
+
+    <section class="footer-column">
+      <h4>CATEGORÍAS</h4>
+      <a href="vestidos.html"">Vestidos</a>
+      <a href="superiores.html">Prendas Superiores</a>
+      <a href="inferiores.html">Prendas Inferiores</a>
+      <a href="abrigos.html">Abrigos / Casacas</a>
+      <a href="faldas.html">Faldas / Shorts</a>
+    </section>
+
+    <section class="footer-column">
+      <h4>SERVICIO AL CLIENTE</h4>
+      <a href="index.html">Inicio</a>
+      <a href="vestidos.html">Prendas</a>
+      <a href="tallas.html">Guía de Tallas</a>
+      <a href="nosotras.html">Nosotras</a>
+    </section>
+
+    <section class="footer-column">
+      <h4>¿NECESITAS MÁS INFORMACIÓN?</h4>
+      <p>📞 Teléfono: 975337314</p>
+      <p>📍 Residencial Monteverde Mz. P lote 10<br>
+      Castilla - Piura</p>
+    </section>
+
+   </footer>
+
+   <!-- 11. COPYRIGHT  -->
+    <section class="copyright">
+      <p>© 2025 Suteki Perú. Todos los derechos reservados.</p>
+    </section>
+
+<!-- BOTÓN WHATSAPP -->
+<div class="whatsapp-widget">
+
+  <div class="whatsapp-header">
+    <div class="titulo">
+      <img src="ICONOS/whatsapp.svg" alt="WhatsApp">
+      <span>WhatsApp</span>
+    </div>
+    <button class="cerrar-whatsapp">✕</button>
+  </div>
+
+  <div class="whatsapp-body">
+    <div class="mensaje-chat">
+      Hola 😊 <br>
+      ¿necesitas ayuda con tu compra?
+    </div>
+
+    <a href="https://wa.me/51975337214" target="_blank" class="abrir-chat">
+      Abrir chat
+      <img src="ICONOS/avion.svg" alt="">
+    </a>
+  </div>
+
+</div>
+
+<!-- BOTÓN FLOTANTE -->
+<div class="whatsapp-fab">
+  <img src="ICONOS/whatsapp.svg" alt="WhatsApp">
+</div>
+
+    <!-- BOTÓN PARA SUBIR-->
+    <button id="btn-subir" aria-label="Subir al inicio">
+      ↑
+    </button>
+
+<!-- ================= JS ================= -->
+<script>
+function toggleMenu() {
+  document.getElementById("menu-principal").classList.toggle("activo");
+}
+</script>
+
+<script>
+  const btnSubir = document.getElementById("btn-subir");
+
+  window.addEventListener("scroll", () => {
+    btnSubir.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+
+  btnSubir.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script> 
+
+<script>
+const grid = document.querySelector('.grid-productos');
+const puntos = document.querySelectorAll('.punto');
+let index = 0;
+
+puntos.forEach((punto, i) => {
+  punto.addEventListener('click', () => {
+    index = i;
+    grid.style.transform = `translateX(-${index * 100}%)`;
+
+    puntos.forEach(p => p.classList.remove('activo'));
+    punto.classList.add('activo');
+  });
+});
+</script>
+
+<script>
+const widget = document.querySelector(".whatsapp-widget");
+const boton = document.querySelector(".whatsapp-fab");
+const cerrar = document.querySelector(".cerrar-whatsapp");
+
+/* ABIERTO AL CARGAR */
+window.addEventListener("load", () => {
+  widget.style.display = "block";
+  boton.classList.add("oculto");
+});
+
+/* HOVER → SE TRANSFORMA EN WIDGET */
+boton.addEventListener("mouseenter", () => {
+  widget.style.display = "block";
+  boton.classList.add("oculto");
+});
+
+/* CERRAR */
+cerrar.addEventListener("click", () => {
+  widget.style.display = "none";
+  boton.classList.remove("oculto");
+});
+</script>
+
+
+</body>
+</html>

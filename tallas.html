@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Suteki | Atrae Miradas  </title>
+
+<!-- Google Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Vinculo a nuestro archivo CSS externo -->
+    <link rel="stylesheet" href="css/styles.css">
+
+
+</head>
+<body>
+  <header>
+<!-- 1. BARRA SUPERIOR (Promoción y Redes Sociales) -->
+   <section class="top-bar">
+
+   <!-- Texto de descuento -->  
+    <p class="mensaje-bienvenidad">
+      ¡ Bienvenidas Sutekis !
+    </p>
+    
+   <!-- Iconos de redes sociales -->
+    <nav class="iconos-sociales">
+      <ul>
+        <li><a href="https://www.tiktok.com/@suteki.peru.20" target="_blank"><img src="ICONOS/tiktok.png" alt="TikTok"></a></li>
+        <li><a href="https://www.facebook.com/Suteki.boutique/" target="blank"><img src="ICONOS/facebook.png" alt="Facebook"></a></li>
+        <li><a href="https://www.instagram.com/suteki.peru/" target="_blank"><img src="ICONOS/instagram.png" alt="Instagram"></a></li>
+      </ul>
+    </nav>
+
+   </section>
+
+<!-- 2. CABECERA CENTRAL (Logo y Utilidades) -->
+   <section class="cabecera">
+    <!-- Icono menú móvil -->
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <!-- Logo -->
+    <a href="inicio.html" class="logo">
+      <img src="IMG/Logo_suteki.png" alt="Logo Suteki">
+    </a>
+
+    <!-- Íconos cabecera derecha (Utilidades)-->
+    <nav class="iconos-utilidades">
+      <ul>
+        <li><img src="ICONOS/buscador.png" alt="Buscar"></li>
+        <li><img src="ICONOS/cuenta.png" alt="Cuenta"></li>
+        <li><img src="ICONOS/corazon.png" alt="Favoritos"></li>
+        <li><img src="ICONOS/bolsa_compra.png" alt="Carrito"></li>
+      </ul>
+    </nav>
+   </section>
+
+<!-- 3. MENÚ PRINCIPAL-->
+    <nav class="menu" id="menu-principal">
+      <ul id="menu-lista">
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="vestidos.html">PRENDAS</a></li>
+        <li><a href="tallas.html"class="active">GUÍA DE TALLAS</a></li>
+        <li><a href="nosotras.html">NOSOTRAS</a></li>
+    </nav>
+</header>
+
+<!-- 4. SUB_CABECERA-->
+<section class="banner-sub">
+
+    <!-- Imagen de banner -->
+    <img src="IMG/fondo-nosotros.jpg" alt="Banner Sub" class="imagen-banner">
+      
+    <div class="texto-banner-sub">
+    <p class="hero-subtitle">Encuentra tu talla perfecta</p>
+    <h2>Guía de Tallas</h2>
+  </div>
+</section>
+
+<!-- GUÍA DE TALLAS -->
+<section class="guia-tallas">
+
+  <div class="guia-contenido">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="guia-info">
+
+      <p class="intro">
+        En Suteki queremos que te sientas segura y cómoda con cada prenda.
+        Por eso creamos esta guía para ayudarte a elegir la talla perfecta según tus medidas.
+      </p>
+
+      <h3 class="titulo-tabla">Tabla de Tallas – Ropa</h3>
+
+      <table class="tabla-tallas">
+        <thead>
+          <tr>
+            <th>Talla</th>
+            <th>S</th>
+            <th>M</th>
+            <th>L</th>
+            <th>XL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Busto</td>
+            <td>84–88 cm</td>
+            <td>88–92 cm</td>
+            <td>92–98 cm</td>
+            <td>98–104 cm</td>
+          </tr>
+          <tr>
+            <td>Cintura</td>
+            <td>64–68 cm</td>
+            <td>68–72 cm</td>
+            <td>72–76 cm</td>
+            <td>76–82 cm</td>
+          </tr>
+          <tr>
+            <td>Cadera</td>
+            <td>90–94 cm</td>
+            <td>94–98 cm</td>
+            <td>98–102 cm</td>
+            <td>102–106 cm</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="subtitulo">¿Cómo medirte?</h3>
+
+      <ul class="medidas">
+        <li>
+          <strong>Busto:</strong> Mide alrededor la parte más completa de tu busto,
+          asegurándote de que la cinta esté cómoda y nivelada.
+        </li>
+        <li>
+          <strong>Cintura:</strong> Coloca la cinta alrededor de la parte más estrecha
+          de tu cintura, justo por encima del ombligo.
+        </li>
+        <li>
+          <strong>Cadera:</strong> Mide alrededor de la parte más completa de tus caderas.
+        </li>
+      </ul>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="guia-imagen">
+      <img src="IMG/Cómo medirte Suteki.png" alt="Guía de medidas mujer">
+    </div>
+
+  </div>
+
+</section>
+
+<section class="bloque-ayuda">
+
+  <div class="card-recomendaciones">
+    <h3>Recomendaciones</h3>
+    <ul>
+      <li>Si estás entre dos tallas, elige la más grande</li>
+      <li>Las medidas pueden variar ligeramente según la prenda</li>
+      <li>Revisa la descripción del producto</li>
+    </ul>
+  </div>
+
+  <div class="cta-dudas">
+    <p>¿Aún tienes dudas?</p>
+    <a href="https://wa.me/51999999999" class="btn-whatsapp" target="_blank">
+      Consultar por WhatsApp
+    </a>
+  </div>
+
+</section>

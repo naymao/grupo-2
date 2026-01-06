@@ -1,0 +1,1615 @@
+/* -------------------------------------------------------------------
+   ESTILOS GENERALES
+   ------------------------------------------------------------------- */
+
+/* Reset básico: elimina márgenes y paddings por defecto */
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Estilos para el body */
+body {
+  font-family: "Josefin Sans", sans-serif;
+  color: #000000;
+}
+
+/* Quitar el subrayado de los enlaces */
+a {
+  text-decoration: none; /* Quitamos el subrayado */
+  color: inherit; /* Hereda el color del padre */
+}
+
+/* Quitar los estilos predeterminados de lista */
+ul {
+  list-style: none; /* Quitamos los puntos de la lista */
+  padding: 0; /* Aseguramos que las listas no tengan padding por defecto */
+  margin: 0;  /* Aseguramos que las listas no tengan margen por defecto */
+}
+
+/* -------------------------------------------------------------------
+   1. BARRA SUPERIOR (.top-bar) - Promoción y Redes Sociales
+   ------------------------------------------------------------------- */
+
+.top-bar {
+  background-color: #000000;
+  padding: 5px 5%;
+  font-size: 18px;
+  /* FLEXBOX: Alinear a los extremos */
+  display: flex;
+  justify-content: space-between;   /* CENTRA el contenido principal */
+  align-items: center; /* Centra verticalmente los elementos (texto e iconos) */
+}
+
+ /* Texto de oferta */
+.mensaje-bienvenidad {
+  color: white;
+  font-size: 18px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+ /* Iconos de redes sociales */
+.iconos-sociales ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* Hacemos que los elementos de la lista se muestren en línea */
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+
+}
+
+.iconos-sociales img{
+  display: block; 
+  width: 28px;    /* Tamaño del icono */
+  height: 28px;
+}
+
+/* --- AQUÍ ESTÁ EL TRUCO DEL COLOR --- */
+.iconos-sociales img:hover {
+  transform: scale(1.2); /* Zoom */
+  /* Este filtro convierte el negro en tu rosado exacto (#efa098) */
+  filter: invert(74%) sepia(21%) saturate(962%) hue-rotate(314deg) brightness(101%) contrast(94%);
+}
+
+/* =========================
+   CÓDIGO: RESPONSIVE
+   ========================= */
+@media (max-width: 768px) {
+    
+    .top-bar {
+        /* Cambiamos la dirección para que se apilen verticalmente */
+        flex-direction: column; 
+        gap: 10px; /* Espacio entre el texto y los iconos */
+        padding: 10px 5%;
+        height: auto; /* Dejamos que la altura se ajuste sola */
+    }
+
+    /* Ajustamos el texto para que deje de intentar centrarse a la fuerza */
+    .mensaje-bienvenidad {
+        position: static; /* Quitamos el relative */
+        transform: none;  /* Quitamos el movimiento */
+        text-align: center;
+        width: 100%;
+        font-size: 16px; /* Un poco más pequeño para celular */
+        margin-bottom: 5px;
+    }
+
+    .iconos-sociales ul {
+        justify-content: center; /* Centramos los iconos */
+    }
+}
+/* -------------------------------------------------------------------
+   2. CABECERA CENTRAL (Logo y Utilidades)
+   ------------------------------------------------------------------- */
+
+.cabecera {
+  background-color: #fff7f6;
+  box-shadow: 0 2px 5px #efa198a7;
+  padding: 30px 5%;
+  display: flex;
+  justify-content: space-between;   /* Logotipo CENTRADO */
+  align-items: center;
+}
+
+.logo{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Logo (Centro) */
+.logo img {
+  max-height: 70px; /* Ajusta este valor según el tamaño deseado */
+  width: auto;
+}
+
+/* Íconos de Utilidad (Derecha) */
+.iconos-utilidades ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* Hacemos que los elementos de la lista se muestren en línea */
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espacio entre cada ícono */
+}
+
+.iconos-utilidades img {
+  width: 24px; 
+  height: 24px;
+  cursor: pointer; /* Indica que son clicables */
+}
+
+/* --- AQUÍ ESTÁ EL TRUCO DEL COLOR --- */
+.iconos-utilidades img:hover {
+  transform: scale(1.1); /* Zoom */
+  /* Este filtro convierte el negro en tu rosado exacto (#efa098) */
+  filter: invert(74%) sepia(21%) saturate(962%) hue-rotate(314deg) brightness(101%) contrast(94%);
+}
+
+/* =========================
+   CÓDIGO: RESPONSIVE
+   ========================= */
+@media (max-width: 768px) {
+/* 1. EL CONTENEDOR */
+    .cabecera {
+        /* Mantenemos fila horizontal para ahorrar altura */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* Reducimos el relleno para que la barra sea delgada */
+        padding: 10px 15px;
+        /* Quitamos espacios innecesarios */
+        gap: 0;
+    }
+
+/* 2. EL LOGO (A la izquierda) */
+    .logo {
+        /* Aseguramos que no ocupe más espacio del necesario */
+        flex-shrink: 0;
+    }
+
+    .logo img {
+        /* Hacemos el logo más pequeño para que entre bien */
+        max-height: 60px;
+    }
+
+/* 3. LOS ICONOS (A la derecha) */
+    .iconos-utilidades ul {
+        /* Quitamos márgenes extraños */
+        margin-left: 0;
+        /* Reducimos el espacio entre iconos para que entren todos */
+        gap: 12px;
+    }
+
+    .iconos-utilidades img {
+        /* Iconos ligeramente más pequeños para móvil */
+        width: 20px;
+        height: 20px;
+    }
+}  
+
+/* -------------------------------------------------------------------
+   3. MENú PRINCIPAL (Centrado-navegación)
+   ------------------------------------------------------------------- */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 20px 0 10px 0;
+    margin-bottom: 0;  /* CLAVE */
+    position: relative;
+    z-index: 10;
+}
+
+
+.menu ul {
+    display: flex;
+    justify-content: center; /* Centra el menú en la página */
+    gap: 100px; 
+}
+
+.menu a {
+    text-transform: uppercase; 
+    font-size: 18px;
+    font-weight: 700; 
+    color: #efa098; 
+    padding: 30px;
+    transition: color 0.3s;
+}
+
+.menu a:hover{
+    font-size: 18px;
+    color: #000000;
+    border-bottom: 4px solid #000000;
+    padding-bottom: 10px;
+    
+}
+.menu a.active {
+    font-size: 18px;
+    color:  #000000;
+    position: relative;
+    z-index: 20;
+    border-bottom: 4px solid  #000000;
+    padding-bottom: 10px;
+}
+
+/* Ocultamos el icono en PC */
+.menu-icon { display: none; }
+
+/* =========================
+   CÓDIGO: RESPONSIVE
+   ========================= */
+@media (max-width: 768px) {
+
+    /* --- A. LA CABECERA (El contenedor rosado) --- */
+    .cabecera {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        padding: 10px 20px;
+        
+        /* CORRECCIÓN 1: Necesario para que el logo se centre respecto a esto */
+        position: relative; 
+        
+        /* CORRECCIÓN 2: Le damos una capa alta para que todo lo que salga de aquí (el menú) tape al banner */
+        z-index: 50; 
+    }
+
+    /* Icono de menú (Izquierda) */
+    .menu-icon {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    /* --- LOGO (CORRECCIÓN DE CENTRADO) --- */
+    .logo {
+        /* Lo forzamos a estar en el centro matemático */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        z-index: 1; /* Detrás del menú si se abre */
+    }
+    .logo img { height: 40px; }
+
+
+    /* --- B. EL MENÚ DESPLEGABLE (La barra blanca) --- */
+    .menu {
+        display: none; /* Oculto por defecto */
+        position: absolute;
+        top: 100%; /* Justo debajo de la cabecera */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        
+        /* CORRECCIÓN 2: Capa muy alta para estar ADELANTE de la imagen */
+        z-index: 100; 
+        
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra más fuerte */
+    }
+
+    /* Cuando se activa con JS */
+    .menu.activado { display: block; }
+
+    /* Estilos de la lista */
+    .menu ul { 
+        flex-direction: column; 
+        gap: 0; 
+        padding: 0; 
+        margin: 0; 
+    }
+    .menu a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+        text-align: center;
+    }
+}
+
+/* =========================
+   AJUSTE TABLET / PANTALLA MEDIANA
+   ========================= */
+@media (max-width: 1100px) {
+
+    .menu ul {
+        gap: 40px; /* Reducimos espacio */
+    }
+
+    .menu a {
+        padding: 20px;
+        font-size: 16px;
+    }
+}
+
+/* =========================
+   HEADER FIJO (TOP BAR + CABECERA + MENU)
+   ========================= */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+main {
+    padding-top: 260px; /* ajusta si quieres */
+}
+/* -------------------------------------------------------------------
+   4. BANNER PRINCIPAL (Centrado)
+   ------------------------------------------------------------------- */
+.banner-principal {
+  position: relative;
+  margin-top: -30px;   /* sube la imagen detrás del menú */
+  z-index: 1; 
+}
+
+.imagen-banner {
+  width: 100%;
+  display: block; 
+  margin-top: 30px;
+}
+
+.texto-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  
+  text-align: center;
+}
+
+.hero-title {
+  font-weight: 700;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+
+}
+
+.text-line {
+   font-size: clamp(10px, 8vw, 130px);
+}
+
+.highlight-box {
+  display: block;
+  width: fit-content;
+  font-size: clamp(50px, 8vw, 150px);
+  background: #efa098;
+  color: #ffffff;
+  padding: 6% 35px 0% 40px ; 
+  margin: 20px auto;        /* centra horizontal */
+}
+ 
+/* --- BOTÓN "compra" --- */
+.btn-compra {
+  /* Estilo del botón */
+  font-size: clamp(14px, 10vw, 25px);
+  display: inline-block;
+  padding: 12px 30px;
+  /* Color de fondo */
+  background: #efa098;
+  color: white;
+  text-decoration: none;
+  font-weight: 0;
+  border: none;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+.btn-compra:hover {
+   /* Sombra para el efecto 3D/degradado sutil */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition:  0.3s ease;
+    /* Efecto al pasar el mouse */
+    background-color: #000000d8;
+}
+
+/* =========================
+    RESPONSIVE – BANNER
+   ========================= */
+@media (max-width: 768px) {
+
+   /* Forzamos al contenedor del banner a pegarse arriba */
+    .banner-principal {
+        margin-top: 0 !important; /* El !important asegura que nadie lo mueva */
+     
+    }
+
+    .imagen-banner {
+       /* Quitamos el margen extra de la imagen si sobra espacio */
+       margin-top: 0;
+   }
+   
+       /* TEXTO GENERAL DEL BANNER */
+    .texto-banner {
+        padding: 0 2px;
+    }
+
+
+    /* VISTE / ACTITUD */
+    .text-line {
+        font-size: clamp(30px, 7vw, 130px);
+    }
+
+    /* TU (CAJA ROSADA) */
+    .highlight-box {
+        font-size: clamp(35px, 7vw, 130px);
+        padding: 7% 12px 1% 15px;
+        margin: 12px auto;
+    }
+    
+    /* BOTÓN */
+    .btn-compra {
+        font-size: 12px;
+        padding: 8px 15px;
+        margin-top: 10px;
+    }
+}
+
+/* -------------------------------------------------------------------
+   5. SECCIÓN DE CATEGORÍAS
+   ------------------------------------------------------------------- */
+.categorias {
+  text-align: center;
+  margin: 40px auto;
+  padding: 40px 10%;
+}
+
+.titulo-categorias {
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: #efa098;
+  margin-bottom: 50px;
+}
+
+/* GRID */
+.grid-categorias {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+}
+
+/* ITEM GENERAL */
+.categoria-item {
+  text-align: center;
+}
+
+.categoria-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* CONTENEDOR ROSADO */
+.categoria-box {
+  background: #fff6f4;
+  border: 4px solid #efa098;
+  border-radius: 28px;
+  padding: 40px 5px;
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+/* ICONO */
+.categoria-box img {
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* TEXTO FUERA DEL CONTENEDOR */
+.categoria-item figcaption {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* HOVER */
+.categoria-item a:hover .categoria-box {
+  background-color: #efa098;
+  transform: translateY(-12px);
+  box-shadow: 0 10px 20px rgba(239, 161, 152, 0.45);
+}
+
+.categoria-item a:hover img {
+  transform: scale(1.15);
+  filter: brightness(0) invert(1);
+}
+/* -------------------------------------------------------------------
+   6. CONOCENOS
+   ------------------------------------------------------------------- */
+/* CONTENEDOR PRINCIPAL */
+.conocenos {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px #efa198a7;
+  max-width: 1260px; 
+  margin: 40px auto;
+}
+
+/* FILA DE DOS COLUMNAS */
+.contenido-conocenos {
+  max-width: 1200px; /* Ancho máximo para el contenido */
+  margin: 0 auto; /* Centrar el contenido dentro de la sección */
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Centra verticalmente los elementos */
+  gap: 30px;
+}
+
+/* --- IMAGEN --- */
+.imagen-conocenos img {
+/* Asegura que la imagen sea responsiva y cubra el contenedor */
+  width: 100%;
+  border-radius: 5px; /* Bordes redondeados sutiles, opcional */
+}
+
+/* --- TEXTO Y TÍTULO (Optimizar) --- */
+.texto-columna {
+  /* Contenedor para el texto y título si quieres aplicar padding a toda la columna de texto */
+  padding: 20px 0;
+}
+
+.titulo-conocenos {
+  
+  color: #efa098;
+  font-size: 32px;
+  letter-spacing: 2px;
+  padding: 15px 0px;
+}
+
+.texto-conocenos p {
+  font-size: 18px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  padding: 0px;
+  margin-top: 0px;
+}
+
+/* --- BOTÓN "Ver más" --- */
+.btn-vermas {
+  /* Estilo del botón */
+  font-size: 18px;
+  display: inline-block;
+  padding: 10px 25px;
+  /* Color de fondo */
+  background: #efa098;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+
+}
+
+.btn-vermas:hover {
+   /* Sombra para el efecto 3D/degradado sutil */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition:  0.3s ease;
+    /* Efecto al pasar el mouse */
+    background-color: #000000;
+}
+
+/* -------------------------------------------------------------------
+   7. PRODUCTOS DESTACADOS
+   ------------------------------------------------------------------- */
+
+.productos-destacados {
+  max-width: 1260px;
+  margin: 40px auto;
+  padding: 40px 0%;
+}
+
+/* TÍTULO */
+.productos-destacados .titulo {
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: #efa098;
+  margin-bottom: 50px;
+}
+
+/* VIEWPORT (OCULTA DESBORDES) */
+.viewport {
+  overflow: hidden;
+}
+
+/* --- Productos mas vendidos --- */
+
+/* CARRUSEL */
+.grid-productos {
+  display: flex;
+  gap: 50px;
+  transition: transform 0.6s ease;
+}
+
+/* PRODUCTO */
+.producto {
+  min-width: calc(25% - 38px); /* 4 visibles */
+  text-align: center;
+}
+
+/* CONTENEDOR DE IMAGEN */
+.producto .img-producto {
+  aspect-ratio: 4 / 6;   /* PROPORCIÓN IDEAL PARA ROPA */
+  position: relative;
+  overflow: hidden;
+}
+
+/* IMAGEN */
+.producto .img-producto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* NO se deforma */
+  display: block;
+}
+
+/* IMAGEN PRINCIPAL */
+.img-principal {
+  position: absolute;
+  inset: 0;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+/* IMAGEN HOVER */
+.img-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+.producto:hover .img-principal {
+  opacity: 0;
+}
+
+.producto:hover .img-hover {
+  opacity: 1;
+}
+
+/* NOMBRE PRODUCTO */
+.producto .nombre {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px 0px;
+  margin-bottom: 5px;
+  color: #000000;
+  text-align: center;
+}
+
+.producto .acciones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+/* PRECIO */
+.producto .precio {
+  border: 1px solid #999999;
+  padding: 7px 16px;
+  font-size: 18px;
+  border-radius: 6px;
+  color: #000;
+  min-width: 140px;
+  text-align: center;
+}
+
+/* BOTÓN CARRITO */
+.producto .btn-carrito {
+  background-color: #efa098;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  min-width: 140px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-carrito:hover {
+    /* Sombra para el efecto 3D/degradado sutil */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition:  0.3s ease;
+    /* Efecto al pasar el mouse */
+    background-color: #000000;
+}
+
+.producto .btn-carrito img {
+  width: 18px;
+  height: 18px;
+}
+
+/* INDICADORES */
+.indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.punto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cfcfcf;
+  cursor: pointer;
+}
+
+.punto.activo {
+  background: #000;
+}
+
+/* -------------------------------------------------------------------
+   8. BENEFICIOS
+   ------------------------------------------------------------------- */
+.beneficios {
+  background: #efa098;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  padding: 50px 8%;
+  gap: 20px;
+  color: white;
+}
+
+.beneficios h2{
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.beneficios p{
+  font-size: 16px;
+  margin: 15px 10%;
+  line-height: 1.3;
+}
+
+.beneficios img {
+  width: 150px;
+  margin-bottom: 2px;
+}
+
+/* -------------------------------------------------------------------
+   9. FOOTER
+   ------------------------------------------------------------------- */
+.footer {
+  background-color: #fff7f6;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+  gap: 40px;
+  padding: 70px 10%;
+}
+
+/* --- Estilos específicos de la columna Logo y Redes --- */
+.logo-redes-column {
+    display: flex; /* Para controlar la alineación de sus elementos hijos */
+    flex-direction: column; /* Coloca los elementos uno debajo del otro */
+    align-items: center; /* Centra horizontalmente el contenido de esta columna */
+    text-align: center; /* Asegura que cualquier texto dentro se centre */
+}
+
+.logo-footer {
+  width: 300px; 
+  height: auto;
+  margin-bottom: 30px;
+}
+
+/* --- Estilos para la lista de Redes Sociales --- */
+.redes-list { /* Usamos la nueva clase en el <ul> */
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+/* El resto de los estilos se mantiene igual, pero elimina los duplicados o redundantes: */
+
+.footer-column h4 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.footer-column a,
+.footer-column p {
+  font-size: 17px;
+  color: #000;
+  margin-bottom: 10px;
+  text-decoration: none;
+  display: block;
+  line-height: 1.3;
+}
+
+.redes-list li {
+  display: flex;
+}
+
+.redes-list img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.redes-list img:hover {
+  transform: scale(1.08);
+}
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------
+   10. COPYRIGHT 
+   ------------------------------------------------------------------- */
+.copyright {
+  background: #efa098;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+} 
+
+/* =========================
+   WHATSAPP FLOTANTE
+   ========================= */
+/* CONTENEDOR PRINCIPAL */
+.whatsapp-widget {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 320px;
+  background: #f4faf6;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  overflow: hidden;
+  display: none;
+  animation: aparecer 0.4s ease;
+}
+
+/* HEADER */
+.whatsapp-header {
+  background: #25D366;
+  color: white;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.whatsapp-header img {
+  width: 26px;
+  margin-right: 8px;
+}
+
+.whatsapp-header .titulo {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.cerrar-whatsapp {
+  background: rgba(0,0,0,0.2);
+  border: none;
+  color: white;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* CUERPO */
+.whatsapp-body {
+  padding: 20px;
+}
+
+/* MENSAJE */
+.mensaje-chat {
+  background: white;
+  padding: 14px 16px;
+  border-radius: 16px;
+  box-shadow: 0 5px 16px rgba(0,0,0,0.1);
+  font-size: 16px;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+/* BOTÓN ABRIR CHAT */
+.abrir-chat {
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  float: right;
+  transition: background-color 0.25s ease,
+              transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.abrir-chat img {
+  width: 26px;
+}
+
+.abrir-chat:hover {
+  background-color: #49d682;
+}
+
+.abrir-chat:active {
+  transform: scale(0.95);
+}
+
+.whatsapp-widget,
+.whatsapp-fab {
+  z-index: 99999;
+}
+
+/* BOTÓN FLOTANTE */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.whatsapp-fab img {
+  width: 32px;
+}
+
+.oculto {
+  display: none !important;
+}
+
+/* ANIMACIÓN */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* BOTÓN SUBIR */
+#btn-subir {
+  position: fixed;
+  right: 0px;        
+  bottom: 90px;       /* ⬆️ ARRIBA DEL BOTÓN WHATSAPP */
+  margin: 25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+
+  background-color: #000000;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+
+  cursor: pointer;
+  display: none;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 999;
+}
+
+#btn-subir:hover {
+  transform: scale(1.15);
+}
+
+
+/* =========================
+   Estilos para la página prendas
+   ========================= */
+.prendas-layout {
+  max-width: 1400px;
+  margin: 60px auto;
+
+}
+
+/* =========================
+   CATEGORÍAS
+========================= */
+.prendas-layout .categorias.prendas {
+  padding: 50px 0;
+  background-color: #ffffff;
+}
+
+/* CONTENEDOR DE CATEGORÍAS (SIN SCROLL) */
+.prendas-layout .grid-categorias.prendas {
+  display: flex;
+  flex-wrap: wrap;              /* 👈 BAJA A OTRA FILA */
+  gap: 20px;
+  align-items: center;
+  justify-content: center;      /* CENTRADAS */
+  overflow: visible;            /* ❌ SIN DESLIZADOR */
+}
+
+/* BOTÓN CATEGORÍA */
+.prendas-layout .categoria-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 22px;
+  border: 2px solid #efa098;
+  border-radius: 30px;
+
+  background-color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  transition: all 0.25s ease;
+}
+
+/* ICONO */
+.prendas-layout .categoria-item img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+/* TEXTO */
+.prendas-layout .categoria-item span {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+}
+
+/* HOVER (SE HUNDE) */
+.prendas-layout .categoria-item:hover {
+  background-color: #efa098;
+  transform: translateY(3px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.prendas-layout .categoria-item:hover span,
+.prendas-layout .categoria-item:hover img {
+  color: #ffffff;
+  filter: brightness(0) invert(1);
+}
+
+/* ACTIVO */
+.prendas-layout .categoria-item.activo {
+  background-color: #efa098;
+  transform: translateY(3px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.prendas-layout .categoria-item.activo span {
+  color: #ffffff;
+}
+
+.prendas-layout .categoria-item.activo img {
+  filter: brightness(0) invert(1);
+}
+
+
+/* --------------------
+  PRODUCTOS
+-------------------- */
+.category-section {
+  max-width: 1260px;
+  margin: 60px auto;
+}
+
+/* GRID PRODUCTOS */
+.products-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+
+/* CARD PRODUCTO */
+.producto {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* CONTENEDOR IMAGEN */
+.producto .img-producto {
+  width: 100%;
+  aspect-ratio: 4 / 6;
+  position: relative;
+  overflow: hidden;
+}
+
+/* IMAGEN */
+.producto .img-producto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* TEXTO */
+.producto .nombre {
+  font-weight: 600;
+  margin-top: 14px;
+  font-size: 16px;
+  color: #000000;
+}
+
+/* ACCIONES */
+.producto .acciones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 8px;
+}
+
+/* PRECIO */
+.producto .precio {
+  border: 1px solid #999999;
+  padding: 7px 16px;
+  font-size: 16px;
+  border-radius: 6px;
+  min-width: 120px;
+  color: #000000;
+}
+
+/* BOTÓN CARRITO */
+.producto .btn-carrito {
+  background-color: #efa098;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.producto .btn-carrito:hover {
+  background-color: #000000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+.producto .btn-carrito img {
+  width: 18px;
+  height: 18px;
+}
+
+/* =====================
+   ANIMACIÓN CARRITO
+===================== */
+.btn-carrito {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Estado animado */
+.btn-carrito.added {
+  transform: scale(1.15);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* Icono animado */
+.btn-carrito.added img {
+  animation: bounce 0.4s ease;
+}
+
+/* Keyframes */
+@keyframes bounce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.3); }
+  60%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+
+/* =========================
+   Estilos para la página NOSOTRAS
+   ========================= */
+
+.banner-sub {
+  position: relative;
+  margin-top: -30px;   /* sube la imagen detrás del menú */
+  z-index: 1;
+}
+
+/* TEXTO ENCIMA */
+.texto-banner-sub {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: #000000;
+  padding: 30px;
+}
+
+/* SUBTÍTULO */
+.hero-subtitle {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+/* TÍTULO */
+.texto-banner-sub h2 {
+  font-size: 40px;
+  font-weight: 700;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0,5px;
+}
+
+/* -----------------------------------
+  QUIENES SOMOS
+----------------------------------- */
+/* CONTENEDOR */
+.quienes-somos {
+  background: #ffffff;
+  padding: 40px 0%;
+  max-width: 1260px;
+  margin: 60px auto;
+}
+
+/*  CONTENEDOR PRINCIPAL (2 COLUMNAS)  */
+.qs-contenido {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px #efa198a7;
+
+  /* AQUÍ SE CREA LAS 2 COLUMNAS */
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* COLUMNA TEXTO */
+.texto-columna {
+  flex: 1;
+  padding: 10px 0;
+}
+/* TÍTULO */
+.qs-contenido h2 {
+  color: #f0a198;
+  font-size: 32px;
+  letter-spacing: 0.5px;
+  margin-bottom: 25px;
+}
+
+/* TEXTO */
+.qs-contenido p {
+  color: #000000;
+  font-size: 18px;
+  line-height: 1.3;
+  margin-bottom: 18px;
+}
+
+/* COLUMNA IMAGEN */
+.imagen-quienes {
+  flex: 1;
+}
+
+/* IMAGEN */
+.imagen-quienes img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* -----------------------------------
+   MISIÓN / VISIÓN
+----------------------------------- */
+.mision-vision {
+  max-width: 1260px;
+  margin: 60px auto;
+  display: flex;
+  gap: 40px;
+}
+
+/* TARJETAS */
+.mision-vision .bloque {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 45px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px #efa1986b;
+
+  /* CENTRADO */
+  text-align: center;
+}
+
+/* ICONOS */
+.icono-mv {
+  width: 130px;
+  margin-bottom: 20px;
+}
+
+/* TÍTULOS */
+.mision-vision h3 {
+  color: #f0a198;
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+/* TEXTO */
+.mision-vision p {
+  color: #000000;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* -----------------------------------
+   VALORES
+----------------------------------- */
+.valores {
+  max-width: 1260px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.valores h3 {
+  color: #f0a198;
+  font-size: 32px;
+  letter-spacing: 0,5px;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.lista-valores {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* ITEM */
+.valor-item {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 18px;
+  padding: 30px 20px;
+  box-shadow: 0 2px 10px #efa1986b;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* TEXTO (PRIMERO) */
+.valor-item span {
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* ICONO (ABAJO) */
+.icono-valor {
+  width: 80px;
+}
+
+/* =========================
+   GUÍA DE TALLAS – SUTEKI
+   ========================= */
+
+.guia-tallas {
+  max-width: 1260px;
+  margin: 60px auto;
+}
+
+.guia-contenido {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+/* TEXTO */
+.intro {
+  font-size: 18px;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.titulo-tabla {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+/* TABLA */
+.tabla-tallas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.tabla-tallas th {
+  background: #f3a7a0;
+  color: #fff;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.tabla-tallas td {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.tabla-tallas td:first-child {
+  font-weight: 500;
+}
+
+/* MEDIDAS */
+.subtitulo {
+  color: #f3a7a0;
+  font-size: 32px;
+  margin-bottom: 30px;
+  margin-top: 60px;   /* separa de la tabla */
+}
+
+.medidas {
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.medidas li {
+  display: flex;
+  gap: 12px;
+  font-size: 18px;
+  line-height: 1.5;
+  padding: 18px 20px;
+  border: 1px solid #f1c9c5;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  background: transparent; /* sin fondo */
+}
+
+.medidas li:hover {
+  border-color: #efa098;
+  transform: translateY(-2px);
+  transition: 0.3s ease;
+} 
+
+.medidas span {
+  background: #f3a7a0;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* IMAGEN */
+.guia-imagen img {
+  max-width: 300px;
+  height: auto;
+}
+
+/* CAJA RECOMENDACIONES */
+.bloque-ayuda {
+  max-width: 1260px;
+  margin: 20px auto;
+}
+
+/* CARD PRINCIPAL */
+.card-recomendaciones {
+  background-color: #fff3ef;
+  border-radius: 18px;
+  padding: 35px 45px;
+}
+
+/* TÍTULO */
+.card-recomendaciones h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+/* LISTA */
+.card-recomendaciones ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card-recomendaciones li {
+  font-size: 18px;
+  margin-bottom: 12px;
+  padding-left: 22px;
+  position: relative;
+}
+
+/* PUNTO DECORATIVO */
+.card-recomendaciones li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #f2a59c;
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* CTA */
+.cta-dudas {
+  margin-top: 45px;
+  text-align: center;
+}
+
+.cta-dudas p {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+/* BOTÓN WHATSAPP */
+.btn-whatsapp{
+  /* Estilo del botón */
+  font-size: 18px;
+  display: inline-block;
+  padding: 13px 34px;
+  /* Color de fondo */
+  background: #efa098;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-whatsapp:hover {
+   /* Sombra para el efecto 3D/degradado sutil */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition:  0.3s ease;
+    /* Efecto al pasar el mouse */
+    background-color: #000000d8;
+}
