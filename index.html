@@ -185,8 +185,12 @@
   <h2 class="titulo">PRENDAS MÁS VENDIDOS</h2>
 
   <!-- CARRUSEL -->
-  <div class="viewport">
-    <div class="grid-productos">
+    <div class="carrusel-contenedor">
+      
+      <button class="flecha-nav anterior" onclick="moverCarrusel(-1)">&#10094;</button>
+    
+      <div class="viewport">
+      <div class="grid-productos" id="grid-productos">
 
       <!-- PRODUCTO 1 -->
       <article class="producto">
@@ -275,11 +279,7 @@
 
     </div>
   </div>
-
-  <!-- INDICADORES -->
-  <div class="indicadores">
-    <span class="punto activo"></span>
-    <span class="punto"></span>
+    <button class="flecha-nav siguiente" onclick="moverCarrusel(1)">&#10095;</button>
   </div>
 
 </section>
@@ -415,45 +415,57 @@ function toggleMenu() {
 </script> 
 
 <script>
-const grid = document.querySelector('.grid-productos');
-const puntos = document.querySelectorAll('.punto');
-let index = 0;
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Seleccionamos los elementos usando LAS CLASES QUE YA TIENES
+    const track = document.querySelector('.grid-productos');
+    const btnNext = document.querySelector('.siguiente');
+    const btnPrev = document.querySelector('.anterior');
+    
+    // Si no encuentra algo, paramos para que no de error
+    if (!track || !btnNext || !btnPrev) return;
 
-puntos.forEach((punto, i) => {
-  punto.addEventListener('click', () => {
-    index = i;
-    grid.style.transform = `translateX(-${index * 100}%)`;
+    // 2. Variable para saber dónde estamos (0 = inicio)
+    let posicionActual = 0;
 
-    puntos.forEach(p => p.classList.remove('activo'));
-    punto.classList.add('activo');
-  });
+    // 3. Función al hacer click en "Siguiente"
+    btnNext.addEventListener('click', () => {
+        // Calculamos cuánto mide un producto + su espacio (aprox)
+        // O movemos el 25% si muestras 4 productos
+        const anchoAMover = track.firstElementChild ? track.firstElementChild.getBoundingClientRect().width + 50 : 300;
+        
+        // Mover hacia la izquierda (negativo)
+        posicionActual -= anchoAMover;
+
+        // Límite: Para que no se vaya al infinito vacío
+        // (Esto es un cálculo simple, puedes ajustarlo)
+        const anchoTotal = track.scrollWidth;
+        const anchoVisible = track.clientWidth;
+        if (Math.abs(posicionActual) > (anchoTotal - anchoVisible)) {
+             posicionActual = -(anchoTotal - anchoVisible);
+        }
+
+        // Aplicar el movimiento
+        track.style.transform = `translateX(${posicionActual}px)`;
+    });
+
+    // 4. Función al hacer click en "Anterior"
+    btnPrev.addEventListener('click', () => {
+        const anchoAMover = track.firstElementChild ? track.firstElementChild.getBoundingClientRect().width + 50 : 300;
+
+        // Mover hacia la derecha (positivo)
+        posicionActual += anchoAMover;
+
+        // Límite: No pasar del inicio (0)
+        if (posicionActual > 0) {
+            posicionActual = 0;
+        }
+
+        // Aplicar el movimiento
+        track.style.transform = `translateX(${posicionActual}px)`;
+    });
 });
 </script>
-
-<script>
-const widget = document.querySelector(".whatsapp-widget");
-const boton = document.querySelector(".whatsapp-fab");
-const cerrar = document.querySelector(".cerrar-whatsapp");
-
-/* ABIERTO AL CARGAR */
-window.addEventListener("load", () => {
-  widget.style.display = "block";
-  boton.classList.add("oculto");
-});
-
-/* HOVER → SE TRANSFORMA EN WIDGET */
-boton.addEventListener("mouseenter", () => {
-  widget.style.display = "block";
-  boton.classList.add("oculto");
-});
-
-/* CERRAR */
-cerrar.addEventListener("click", () => {
-  widget.style.display = "none";
-  boton.classList.remove("oculto");
-});
 </script>
-
 
 </body>
 </html>
